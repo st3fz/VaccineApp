@@ -9,11 +9,20 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
-  
+
+  const[ sidebar, setSidebar ] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebar(!sidebar);
+  }
+
   return (
     <Router>
-      <Navbar onchange={(e) => { onchange(e) }}/>
-      <div>
+      <div className={`navbar py-4 pl-5 ${sidebar ? 'content-shift-right' : ''}`}>
+        <a className="navbar-brand" onClick={toggleSidebar}>Vaccine App</a>
+      </div>
+      <Navbar sidebar={sidebar} toggleSidebar={toggleSidebar} setSidebar={setSidebar}/>
+      <div className={sidebar ? 'content-shift-right' : ''}>
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/chat" component={Chat}/>

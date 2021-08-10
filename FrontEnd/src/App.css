@@ -13,4 +13,5 @@
 .content-shift-right {
     position: fixed;
     left: 250px;
+    transition: 850ms;
 }

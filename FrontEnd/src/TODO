@@ -1,0 +1,3 @@
+-Remove all !important in css and refactor the code accordingly
+-Convert all css to scss
+-Set width of content-shift-right in App.js to be = to the width of the navbar
