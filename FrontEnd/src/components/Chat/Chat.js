@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Chat.css";
+import "./Chat.scss";
 import axios from "axios";
 
 export default class Chat extends Component {

@@ -5,8 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
 import Chat from './components/Chat/Chat';
 
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import './App.scss';
 
 function App() {
 

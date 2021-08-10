@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
-import "./LoginSignup.css";
+import "./LoginSignup.scss";
 import axios from "axios";
 
 export default class LoginSignup extends React.Component {
