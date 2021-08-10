@@ -9,3 +9,8 @@
     height: 90vh;
     font-size: 3rem;
 }
+
+.content-shift-right {
+    position: fixed;
+    left: 250px;
+}

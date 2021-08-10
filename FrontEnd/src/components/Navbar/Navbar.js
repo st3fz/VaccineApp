@@ -4,34 +4,29 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { NavbarData } from "./NavbarData";
 
-import * as FaIcons from "react-icons/fa";
+// import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { IconContext } from "react-icons";
 
-export default function Navbar() {
-    const[ sidebar, setSidebar ] = useState(false);
+function Navbar() {
+    
+    const[ sidebar, toggleSidebar ] = useState(false);
 
     const showSidebar = () => {
-        setSidebar(!sidebar);
-        openNav();
+        toggleSidebar(!sidebar);
     }
-
-    // const openNav = () => {
-        
-    // }
 
     return (
       <>
-      <IconContext.Provider value={{ color: '#ffffff' }}>
-        <div className="navbar">
-            <Link to="#" className="menu-hamburger">
-                <FaIcons.FaBars onClick={showSidebar}/>
-            </Link>
+      <IconContext.Provider value={{ color: 'white' }}>
+        <div className="navbar py-4 pl-5">
+            {/* <FaIcons.FaBars className="hamburger-menu"/> */}
+            <a className="navbar-brand" onClick={showSidebar}>Vaccine App</a>
         </div>
-        <nav className={ sidebar ? 'nav-menu active' : 'nav-menu' }>
-            <ul onClick={showSidebar} className="nav-menu-items">
-                <li className="navbar-toggle">
-                    <Link to="#" className="menu-hamburger">
+        <nav className={`nav-menu ${sidebar ? 'active' : ''}`}>
+            <ul className="nav-menu-items">
+                <li onClick={showSidebar} className="navbar-toggle d-flex align-items-center">
+                    <Link to="#" className="cross-icon">
                         <AiIcons.AiOutlineClose/>
                     </Link>
                 </li>
@@ -51,3 +46,5 @@ export default function Navbar() {
       </>
     );
 };
+
+export default Navbar

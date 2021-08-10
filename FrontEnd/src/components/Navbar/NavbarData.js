@@ -12,7 +12,7 @@ export const NavbarData = [
     },
     {
         title: "Log In",
-        path: "/login",
+        path: "/auth",
         icon: <IoIcons.IoIosPaper />,
         className: "nav-text"
     },
