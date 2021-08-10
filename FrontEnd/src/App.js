@@ -18,11 +18,11 @@ function App() {
 
   return (
     <Router>
-      <div className={`navbar py-4 pl-5 ${sidebar ? 'content-shift-right' : ''}`}>
+      <div className={`navbar py-4 pl-5 ${sidebar ? 'add-left-margin' : ''}`}>
         <a className="navbar-brand" onClick={toggleSidebar}>Vaccine App</a>
       </div>
       <Navbar sidebar={sidebar} toggleSidebar={toggleSidebar} setSidebar={setSidebar}/>
-      <div className={sidebar ? 'content-shift-right' : ''}>
+      <div className={sidebar ? 'add-left-margin' : ''}>
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/chat" component={Chat}/>

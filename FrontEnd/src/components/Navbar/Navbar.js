@@ -13,7 +13,7 @@ function Navbar(props) {
       <>
       <IconContext.Provider value={{ color: 'white' }}>
         <h2>{props.sidebar}</h2>
-        <nav className={`nav-menu ${props.sidebar ? 'active' : ''}`}>
+        <nav className={`nav-menu pt-5 ${props.sidebar ? 'active' : ''}`}>
             <ul className="nav-menu-items">
                 <li onClick={props.toggleSidebar} className="navbar-toggle d-flex align-items-center">
                     <Link to="#" className="cross-icon">

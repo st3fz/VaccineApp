@@ -10,8 +10,7 @@
     font-size: 3rem;
 }
 
-.content-shift-right {
-    position: fixed;
-    left: 250px;
-    transition: 850ms;
+.add-left-margin {
+    padding-left: 240px;
+    transition: 450ms;
 }
