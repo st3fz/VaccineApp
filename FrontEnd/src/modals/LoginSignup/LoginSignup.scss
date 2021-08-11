@@ -1,6 +1,8 @@
+@import "../../App";
+
 .ReactModal__Overlay {
-    background-image: linear-gradient( white,rgb(210, 234, 241));
-  }
+    background-image: linear-gradient( to bottom right, $primary, $light);
+}
 
 input {
     line-height: 2 !important;

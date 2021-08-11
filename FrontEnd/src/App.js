@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';
 import Home from './pages/Home';
 import Chat from './components/Chat/Chat';
-import TopNavbar from './components/TopNavbar/TopNavbar'
+import TopNavbar from './components/TopNavbar/TopNavbar';
+import LoginSignup from './modals/LoginSignup/LoginSignup';
 
 import './App.scss';
 
@@ -24,6 +25,7 @@ function App(props) {
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/chat" component={Chat}/>
+          <Route path="/auth" component={LoginSignup}/>
         </Switch>
       </div>
     </Router>

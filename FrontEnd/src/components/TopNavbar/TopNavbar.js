@@ -1,10 +1,16 @@
+import "./TopNavbar.scss";
+import { Link } from 'react-router-dom';
+
 function TopNavbar(props) {
 
     return(
         <>
-            <div className={`navbar py-4 pl-5 ${props.sidebar ? 'add-left-margin' : ''}`}>
+            <nav className={`navbar py-4 pl-5 pr-5 ${props.sidebar ? 'add-left-margin' : ''}`}>
                 <a className="navbar-brand" onClick={props.toggleSidebar}>Vaccine App</a>
-            </div>
+                <Link to="/auth">
+                    <a className="login">Login</a>
+                </Link>
+            </nav>
         </>
     )
 }

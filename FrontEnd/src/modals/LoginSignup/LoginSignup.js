@@ -46,7 +46,7 @@ export default class LoginSignup extends React.Component {
 
   componentDidMount() {
     Modal.setAppElement("#root");
-    this.hideModal();
+    // this.hideModal();
   }
 
   togglePage() {

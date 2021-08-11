@@ -4,27 +4,13 @@
     background-color: $primary;
 }
 
-.navbar-brand {
-    margin-left: 30px;
-    color: $light !important;
-    font-size: 40px !important;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.navbar-brand a:hover {
-    color: $highlight !important;
-}
-
 .cross-icon {
     font-size: 40px;
 }
 
-a:hover {
-    text-decoration: none;
-}
-
 .nav-menu {
     background-color: $primary;
-    width: 240px;
+    width: $side-navbar-width;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -48,9 +34,8 @@ a:hover {
 }
 
 .nav-text a {
-    text-decoration: none;
     color: $light;
-    font-size: 18px;
+    font-size: $sidebar-text;
     width: 95%;
     height: 100%;
     display: flex;

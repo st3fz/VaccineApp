@@ -1,4 +1,6 @@
-@import 'styles/colors';
+@import 'styles/color';
+@import 'styles/font';
+@import 'styles/size';
 @import 'node_modules/bootstrap/scss/bootstrap';
 
 * {
@@ -8,12 +10,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.home {
-    height: 90vh;
-    font-size: 3rem;
+a, a:hover {
+    color: $light !important;
+    text-decoration: none !important;
 }
 
 .add-left-margin {
-    padding-left: 240px;
+    padding-left: $side-navbar-width;
     transition: 450ms;
 }
