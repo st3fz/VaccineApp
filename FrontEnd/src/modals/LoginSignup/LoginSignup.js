@@ -22,7 +22,7 @@ export default class LoginSignup extends React.Component {
       modalStyles: {
         content: {
           borderRadius: "25px",
-          width: "37%",
+          width: "95%",
           top: "50%",
           left: "50%",
           right: "auto",

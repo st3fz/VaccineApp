@@ -1,6 +1,5 @@
 @import '../../App';
 
-
 .navbar-brand {
     margin-left: 30px;
     color: $light !important;
@@ -9,7 +8,7 @@
 }
 
 .navbar-brand a:hover {
-    color: $select !important;
+    color: $selected important;
 }
 
 .login {
