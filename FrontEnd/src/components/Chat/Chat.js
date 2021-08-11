@@ -10,11 +10,12 @@ export default class Chat extends Component {
       chat: "",
       username: "Steffi",
       date: "",
-      isChatOpened: false,
+      isChatOpen: false,
     };
+    
     this.handleChatAddition = this.handleChatAddition.bind(this);
     this.updateChat = this.updateChat.bind(this);
-    this.toggleIsChatOpened = this.toggleIsChatOpened.bind(this);
+    this.toggleIsChatOpen = this.toggleIsChatOpen.bind(this);
   }
 
   componentDidMount() {
@@ -25,10 +26,10 @@ export default class Chat extends Component {
     this.setState({ chat: e.target.value });
   };
 
-  toggleIsChatOpened() {
-    const { isChatOpened } = this.state;
+  toggleIsChatOpen() {
+    const { isChatOpen } = this.state;
     this.setState({
-      isChatOpened: !isChatOpened,
+      isChatOpen: !isChatOpen,
     });
   }
 
@@ -94,57 +95,41 @@ export default class Chat extends Component {
   }
 
   render() {
-    const { chats, chat, username, isChatOpened } = this.state;
+    const { chats, chat, username, isChatOpen } = this.state;
 
-    if (!isChatOpened) {
-      return (
-        <div className="">
+    return(
+      <>
+      <div>
+        <button className={`btn ${isChatOpen ? 'd-none' : 'd-block'}`} onClick={this.toggleIsChatOpen}>
+          Open Live Chat
+        </button>
+        <button className={`btn ${isChatOpen ? 'd-block' : 'd-none'}`} onClick={this.toggleIsChatOpen}>
+          Close Live Chat
+        </button>
+      </div>
+      <div className={`${ isChatOpen ? 'd-block' : 'd-none'}`}>
+        <h2 className="text-center">Chat</h2>
+        {chats.map((chats) => (
           <div className="">
-          <br/><br/><br/>
+            <span className="badge badge-pill badge-warning py-3 px-3 mb-2">
+              <p className="text-left">{chats.message}</p>
+              <span className="username-bubble pull-left pr-3">{chats.username}</span>
+              <span className="pull-right text-grey">{chats.dateNow}</span>
+            </span>   
           </div>
-          <div className="">
-            <button className="btn" onClick={this.toggleIsChatOpened}>
-              Open Live Chat
-            </button>
-          </div>
-        </div>
-      );
-    } else if (isChatOpened) {
-      return (
-        <div className="">
-          <div className="">
-          <br/><br/><br/>
-          </div>
-          <div className="">
-            <p>
-            <button className="btn d-block" onClick={this.toggleIsChatOpened}>
-              Close Live Chat
-            </button></p>
-          </div>
-          <div className=" d-block mx-auto chat-box-bg p-3">
-            <h2 className="text-center">Chat</h2>
-            {chats.map((chats) => (
-              <div className="">
-                <span className="badge badge-pill badge-warning py-3 px-3 mb-2">
-                  <p className="text-left">{chats.message}</p>
-                  <span className="username-bubble pull-left pr-3">{chats.username}</span>
-                  <span className="pull-right text-grey">{chats.dateNow}</span>
-                </span>
-              </div>
-            ))}
-            <p>Posting as(username): <span className="text-green">{username}</span></p>
-            <input
-              type="text"
-              id="typeMsg"
-              value={chat}
-              onChange={this.handleChatAddition}
-            />
-            <button className="btn btn-light btn-round ml-2" onClick={this.updateChat}>
-              Send
-            </button>
-          </div>
-        </div>
-      );
-    }
+        ))}
+        <p>Posting as(username): <span className="text-green">{username}</span></p>
+        <input
+          type="text"
+          id="typeMsg"
+          value={chat}
+          onChange={this.handleChatAddition}
+        />
+        <button className="btn btn-light btn-round ml-2" onClick={this.updateChat}>
+          Send
+        </button>
+      </div>
+      </>
+    )
   }
 }

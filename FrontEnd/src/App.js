@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 import Home from './pages/Home';
 import Chat from './components/Chat/Chat';
+import TopNavbar from './components/TopNavbar/TopNavbar'
 
 import './App.scss';
 
-function App() {
+function App(props) {
 
   const[ sidebar, setSidebar ] = useState(false);
 
@@ -17,10 +18,8 @@ function App() {
 
   return (
     <Router>
-      <div className={`navbar py-4 pl-5 ${sidebar ? 'add-left-margin' : ''}`}>
-        <a className="navbar-brand" onClick={toggleSidebar}>Vaccine App</a>
-      </div>
-      <Navbar sidebar={sidebar} toggleSidebar={toggleSidebar} setSidebar={setSidebar}/>
+      <TopNavbar sidebar={sidebar} toggleSidebar={toggleSidebar} />
+      <Sidebar sidebar={sidebar} toggleSidebar={toggleSidebar} />
       <div className={sidebar ? 'add-left-margin' : ''}>
         <Switch>
           <Route path="/" exact component={Home}/>

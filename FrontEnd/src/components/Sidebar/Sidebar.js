@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Navbar.scss";
-import { NavbarData } from "./NavbarData";
+import "./Sidebar.scss";
+import { SidebarData } from "./SidebarData";
 
 import * as AiIcons from "react-icons/ai";
 import { IconContext } from "react-icons";
 
-function Navbar(props) {
+function Sidebar(props) {
 
     return (
       <>
@@ -20,7 +20,7 @@ function Navbar(props) {
                         <AiIcons.AiOutlineClose/>
                     </Link>
                 </li>
-                {NavbarData.map((item, index) => {
+                {SidebarData.map((item, index) => {
                     return(
                         <li key={index} className={item.className}>
                             <Link to={item.path}>
@@ -37,4 +37,4 @@ function Navbar(props) {
     );
 };
 
-export default Navbar
+export default Sidebar
