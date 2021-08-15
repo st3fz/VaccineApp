@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar/Sidebar';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Chat from './components/Chat/Chat';
-import TopNavbar from './components/TopNavbar/TopNavbar';
+import Navbar from './components/Navbar/Navbar';
 import LoginSignup from './modals/LoginSignup/LoginSignup';
 
 import './App.scss';
@@ -19,7 +19,7 @@ function App(props) {
 
   return (
     <Router>
-      <TopNavbar sidebar={sidebar} toggleSidebar={toggleSidebar} />
+      <Navbar sidebar={sidebar} toggleSidebar={toggleSidebar} />
       <Sidebar sidebar={sidebar} toggleSidebar={toggleSidebar} />
       <div className={sidebar ? 'add-left-margin' : ''}>
         <Switch>

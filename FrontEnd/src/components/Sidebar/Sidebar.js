@@ -14,7 +14,7 @@ function Sidebar(props) {
       <IconContext.Provider value={{ color: 'white' }}>
         <h2>{props.sidebar}</h2>
         <nav className={`nav-menu pt-5 ${props.sidebar ? 'active' : ''}`}>
-            <ul className="nav-menu-items">
+            <ul className="nav-menu-items pl-1">
                 <li onClick={props.toggleSidebar} className="navbar-toggle d-flex align-items-center">
                     <Link to="#" className="cross-icon">
                         <AiIcons.AiOutlineClose/>
@@ -22,7 +22,7 @@ function Sidebar(props) {
                 </li>
                 {SidebarData.map((item, index) => {
                     return(
-                        <li key={index} className={item.className}>
+                        <li key={index} className="nav-text">
                             <Link to={item.path}>
                                 {item.icon}
                              <span>{item.title}</span>

@@ -1,0 +1,15 @@
+@import '../../App';
+
+.navbar-brand {
+    margin-left: 10px;
+    height: $navbar-height;
+}
+
+.navbar-brand a:hover {
+    color: $selected !important;
+}
+
+.login-button {
+    font-size: $navbar-item;
+    margin-right: 10px;
+}
