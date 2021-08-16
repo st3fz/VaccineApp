@@ -2,12 +2,14 @@ package com.steffi.usersapi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 public class User {
 
     private final UUID id;
 //    private final String username;
+    @NotBlank
     private final String name;
 //    private final int age;
 //    private final String email;
