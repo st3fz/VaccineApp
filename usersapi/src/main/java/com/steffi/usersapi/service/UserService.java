@@ -16,7 +16,7 @@ public class UserService {
     private final UserDao userDao;
 
     @Autowired //auto wiring into the UserDao interface
-    public UserService(@Qualifier("fakeDao") UserDao userDao) {
+    public UserService(@Qualifier("postgres") UserDao userDao) {
         //Qualifier lets us have multiple implementations
         this.userDao = userDao;
     }
