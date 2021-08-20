@@ -1,0 +1,8 @@
+-watch freeCodeCamp.org on dependency injection
+-Remove all !important in css and refactor the code accordingly
+
+
+Done:
+-Convert all css to scss
+-Set width of content-shift-right in App.js to be = to the width of the navbar
+-Implement custom fonts and themes in main file
