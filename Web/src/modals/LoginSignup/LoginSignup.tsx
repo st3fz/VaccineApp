@@ -86,11 +86,11 @@ export default class LoginSignup extends React.Component<Props, State> {
     
     axios
       .get(url)
-      .then((response) => {
+      .then( response => {
         this.setState({ fetchedPassword: response.data.password });
         this.setState({ fetchedUsername: response.data.username });
       })
-      .catch(function (error) {
+      .catch( error => {
         console.log("Error: " + error);
       });
 
@@ -135,11 +135,11 @@ export default class LoginSignup extends React.Component<Props, State> {
         headers: { "Content-Type": "application/json"},
         data: body,
       })
-        .then(function (response) {
-          console.log("Submitted: " + response);
+        .then( res => {
+          console.log("Submitted: " + res);
         })
-        .catch(function (error) {
-          console.log("Error: " + error);
+        .catch( err => {
+          console.log("Error: " + err);
         });
 
       this.hideModal();

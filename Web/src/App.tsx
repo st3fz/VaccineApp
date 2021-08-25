@@ -11,17 +11,17 @@ import './App.scss';
 
 function App() {
 
-  const[ sidebar, setSidebar ] = useState(false);
+  const[ isSidebarOpen, setIsSidebarOpen ] = useState<boolean>(false);
 
-  const toggleSidebar = () => {
-    setSidebar(!sidebar);
+  const toggleSidebar: ()=>void = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   }
 
   return (
     <Router>
-      <Navbar sidebar={sidebar} toggleSidebar={toggleSidebar} />
-      <Sidebar sidebar={sidebar} toggleSidebar={toggleSidebar} />
-      <div className={sidebar ? 'add-left-margin' : ''}>
+      <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <div className={isSidebarOpen ? 'add-left-margin' : ''}>
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/chat" component={Chat}/>

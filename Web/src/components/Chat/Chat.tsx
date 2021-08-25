@@ -2,8 +2,24 @@ import React, { Component } from "react";
 import "./Chat.scss";
 import axios from "axios";
 
-export default class Chat extends Component {
-  constructor(props) {
+interface State {
+  chat : string;
+  chats: {
+    message: string;
+    date: string;
+    username:string;
+  }[];
+  username : string;
+  date: string;
+  isChatOpen : boolean;
+} 
+
+interface Props {
+
+}
+
+export default class Chat extends React.Component<Props, State> {
+  constructor(props : Props) {
     super(props);
     this.state = {
       chats: [],
@@ -22,7 +38,7 @@ export default class Chat extends Component {
     this.pullChats();
   }
 
-  handleChatAddition = e => {
+  handleChatAddition = (e: any) => {
     this.setState({ chat: e.target.value });
   };
 
@@ -33,11 +49,11 @@ export default class Chat extends Component {
     });
   }
 
-  updateChat = e => {
+  updateChat = (e: any) => {
     e.preventDefault();
     const { chat, username, chats, date } = this.state;
 
-    chats.push(chat);
+    // chats.push(chat);
 
     var now = new Date();
     var minutes = now.getMinutes().toString()
@@ -51,18 +67,18 @@ export default class Chat extends Component {
     var day = now.getDay()
     var month = now.getDate()
     var year = now.getFullYear()
-    var dateNow = `${hours}:${minutes} ${day}/${month}/${year}`;
+    var setDate = `${hours}:${minutes} ${day}/${month}/${year}`;
 
     this.setState({ 
       chat: e.target.value.toString(),
       username: username.toString(),
-      date: dateNow.toString() 
+      date: setDate.toString() 
     });
 
     var body = {
-      username: username.toString(),
+      username: username,
       message: chat,
-      dateNow: date
+      date: date
     };
 
     axios
@@ -71,11 +87,11 @@ export default class Chat extends Component {
           "Content-Type": "application/json",
         },
       })
-      .then(function (response) {
-        console.log("response: " + response);
+      .then( res => {
+        console.log("response: " + res);
       })
-      .catch(function (error) {
-        console.log("error: " + error);
+      .catch( err => {
+        console.log("error: " + err);
       });
       
     this.pullChats();
@@ -85,11 +101,11 @@ export default class Chat extends Component {
     console.log("console");
     axios
       .get("http://localhost:8080/api/chats")
-      .then((res) => {
+      .then(res => {
         this.setState({ chats: res.data });
         console.log(res.data);
       })
-      .catch(function (error) {
+      .catch( error => {
         console.log("Error: " + error);
       });
   }
@@ -114,7 +130,7 @@ export default class Chat extends Component {
             <span className="badge badge-pill badge-warning py-3 px-3 mb-2">
               <p className="text-left">{chats.message}</p>
               <span className="username-bubble pull-left pr-3">{chats.username}</span>
-              <span className="pull-right text-grey">{chats.dateNow}</span>
+              <span className="pull-right text-grey">{chats.date}</span>
             </span>   
           </div>
         ))}
