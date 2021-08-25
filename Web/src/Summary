@@ -1,8 +1,0 @@
-Functional Components
--Navbar (regular function)
--Sidebar (arrow function, React.FC)
-
-Class Components
--Chat
--LoginSignup
--Home
