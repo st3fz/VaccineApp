@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar/Sidebar';
-import Home from './pages/Home/Home';
+import { Home } from './pages/Home/Home';
 import Chat from './components/Chat/Chat';
 import Navbar from './components/Navbar/Navbar';
 import LoginSignup from './modals/LoginSignup/LoginSignup';

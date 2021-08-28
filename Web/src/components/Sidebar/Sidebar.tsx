@@ -11,7 +11,7 @@ interface Props {
     toggleSidebar : ()=>void;
 }
 
-function Sidebar(props:Props) {
+function Sidebar(props: Props) : JSX.Element {
 
     return (
       <>

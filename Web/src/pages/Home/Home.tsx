@@ -3,7 +3,7 @@ import React from 'react';
 import './Home.scss';
 import { CardsData } from './Cards/CardsData';
 
-export default function Home() {
+export const Home: React.FC = ()=> {
     return(
         <div id="home" className="container text-center">
             <div className="row">

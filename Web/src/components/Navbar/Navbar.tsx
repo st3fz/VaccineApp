@@ -7,7 +7,7 @@ type Props = {
     toggleSidebar: ()=>void;
 }
 
-function Navbar(props:Props) {
+const Navbar : React.FC<Props> = (props) => {
     return(
         <>
             <nav className={`navbar bg-primary ${props.isSidebarOpen ? 'add-left-margin' : ''}`}>
