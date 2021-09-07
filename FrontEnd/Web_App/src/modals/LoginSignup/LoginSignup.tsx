@@ -31,7 +31,7 @@ export default class LoginSignup extends React.Component<Props, State> {
       password: "",
       fetchedPassword: "",
       password2: "",
-      mobile: NaN,
+      mobile: +65,
       email: "",
       address: "",
       needSpecialCare: false,

@@ -1,6 +1,0 @@
-Functional Components
--Sidebar (JSX.Element)
--Home, Navbar (arrow function, React.FC)
-
-Class Components
--LoginSignup, Chat (React.Component)
