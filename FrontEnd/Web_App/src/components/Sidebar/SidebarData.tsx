@@ -7,16 +7,26 @@ export const SidebarData = [
     {
         title: "Home",
         path: "/",
-        icon: <AiIcons.AiFillHome />
+        icon: <AiIcons.AiFillHome/>
     },
     {
         title: "Log In",
         path: "/auth",
-        icon: <IoIcons.IoIosPaper />
+        icon: <IoIcons.IoIosPaper/>
     },
     {
         title: "Chat",
         path: "/chat",
-        icon: <FaIcons.FaEnvelopeOpen />
+        icon: <FaIcons.FaEnvelopeOpen/>
+    },
+    {
+        title: "Sign Up for Special Needs",
+        path: "",
+        icon: <FaIcons.FaMedkit/>,
+    },
+    {
+        title: "Become A Volunteer",
+        path: "",
+        icon: <FaIcons.FaPrayingHands/>
     }
 ];
